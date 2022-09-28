@@ -46,7 +46,7 @@ public class BillServiceImpl implements BillService{
             bill.setPaidDate(billDto.getPaidDate());
             bill.setBillAmount(billDto.getBillAmount());
             bill.setPaid(billDto.getPaid());
-            bill.setImage(billDto.getImage());
+           bill.setImage(billDto.getImage());
             bill.setReoccurring(billDto.getReoccurring());
             billRepository.saveAndFlush(bill);
         });
