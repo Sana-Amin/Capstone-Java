@@ -26,8 +26,10 @@ const handleSubmit = async (e) =>{
         .catch(err => console.error(err.message))
 
     const responseArr = await response.json()
-
-    if (response.status === 200){
+    if (registerUsername.value == "" || registerUsername.value == "") {
+        console.log("user not found!");
+        alert("Please enter a valid username or password.");
+    } else if (response.status === 200){
         window.location.replace(responseArr[0])
     }
 }

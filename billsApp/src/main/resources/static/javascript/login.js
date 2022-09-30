@@ -25,12 +25,23 @@ const handleSubmit = async (e) =>{
 
     const responseArr = await response.json()
 
-    if (response.status === 200){
+    if (loginUsername.value == "" || loginPassword.value == "") {
+        console.log("user not found!");
+        alert("Please enter a valid username or password.");
+    } else if (response.status === 200) {
         console.log(responseArr[0])
         document.cookie = `userId=${responseArr[1]}`
         console.log(document.cookie)
-        window.location.replace(responseArr[0])
     }
+        if (responseArr[0] == "Username or password incorrect"){
+            alert("Username or password incorrect ")
+        }else{
+            window.location.replace(responseArr[0])
+        }
+        console.log(responseArr)
+        console.log(response.status)
+    //window.location.replace(responseArr[0])
+
 }
 
 loginForm.addEventListener("submit", handleSubmit)

@@ -21,7 +21,7 @@ public class BillController {
     }
 
     @GetMapping("/{billId}")
-    public Optional<BillDto> getAllBillById(@PathVariable Long billId){
+    public Optional<BillDto> getBillById(@PathVariable Long billId){
         return billService.getBillById(billId);
     }
 
@@ -36,8 +36,7 @@ public class BillController {
     }
 
     @PutMapping
-    public void updateBill(@RequestBody BillDto billDto){
-        billService.updateBillById(billDto);
+    public void updateBill(@RequestBody BillDto billDto){billService.updateBillById(billDto);
     }
 
     @GetMapping("/user/{userId}/total")
