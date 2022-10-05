@@ -1,8 +1,6 @@
 const registerForm = document.getElementById('register-form')
 const registerUsername = document.getElementById('register-username')
 const registerPassword = document.getElementById('register-password')
-console.log(registerUsername.value)
-console.log(registerPassword.value)
 const headers = {
     'Content-Type':'application/json'
 }
@@ -26,10 +24,8 @@ const handleSubmit = async (e) =>{
         .catch(err => console.error(err.message))
 
     const responseArr = await response.json()
-    if (registerUsername.value == "" || registerUsername.value == "") {
-        console.log("user not found!");
-        alert("Please enter a valid username or password.");
-    } else if (response.status === 200){
+
+     if (response.status === 200){
         window.location.replace(responseArr[0])
     }
 }

@@ -10,42 +10,43 @@
 
     <title>Home</title>
 </head>
-<body>
-<a class="btn btn-danger navbar-btn" href="./login.html" onclick="handleLogout()">Logout</a>
+<body class="container" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
 
-<h3 id = "bill-totalAmount">Your Bill total is $</h3>
-
-
-<section class="vh-100 bg-image"
-         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-        <div class="container h-100">
+<section class="vh-100 gradient-custom">
+    <nav class="navbar justify-content-between">
+        <a style = "background-color: grey;" class=" btn btn-outline-light btn-lg px-5"  href="./login.html" onclick="handleLogout()">Logout</a>
+        <a style = "background-color: grey;" class=" btn btn-outline-light btn-lg px-5" href="./main.html" >View Bills</a>
+    </nav>
+    <form id="bill-form">
+        <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                    <div class="card" style="border-radius: 15px;">
-                        <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Create a Bill</h2>
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div id="border-height" class="card-body p-5 text-center">
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                            <h2 class= "fw-bold mb-2 text-uppercase text-center">Create A Bill</h2>
 
-                            <form id="bill-form">
-
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="name-input" class="form-control form-control-lg" />
-                                    <label class="form-label" for="name-input">Bill Name</label>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label"  for="name-input">Bill Name</label>
+                                    <input type="text" id="name-input" class="form-control" placeholder="Bill Name" required = "true"/>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="bill-input" class="form-control form-control-lg" />
                                     <label class="form-label" for="bill-input">Bill Amount</label>
+                                    <div id = "dollar-sign">
+                                    <span id="center-dollar">$</span>
+                                    <input type="text" id="bill-input" class="form-control" placeholder = "20.00" required = "true"/>
+                                    </div>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="due-date" class="form-control form-control-lg" />
                                     <label class="form-label" for="due-date">Due Date</label>
+                                    <input type="text" id="due-date" class="form-control" placeholder="Due Date" required = "true" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="paid-date" class="form-control form-control-lg" />
                                     <label class="form-label" for="paid-date">Paid Date</label>
+                                    <input type="text" id="paid-date" class="form-control" placeholder="Paid Date"/>
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -58,89 +59,16 @@
                                     <label class="form-check-label" for="reoccurring">Reoccurring</label>
                                 </div>
 
-
-                                <div class="d-flex justify-content-center">
                                     <button type="submit"
-                                            id="submit-button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
-                                </div>
-
-
-
-                            </form>
+                                            id="submit-button" class="btn btn-outline-light btn-lg px-5">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </section>
-
-<!-- Modal -->
-<div class="modal fade" id="bill-edit-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="bill-edit-modal-title" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="bill-edit-modal-title">Edit your bill</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="modal-form">
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="name-text" class="form-control form-control-lg" />
-                    <label class="form-label" for="name-text">Bill Name</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="billAmount-text" class="form-control form-control-lg" />
-                    <label class="form-label" for="billAmount-text">Bill Amount</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="dueDate-text" class="form-control form-control-lg" />
-                    <label class="form-label" for="dueDate-text">Due Date</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="paidDate-text" class="form-control form-control-lg" />
-                    <label class="form-label" for="paidDate-text">Paid Date</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="checkbox" id="paid-text" class="form-check-input">
-                    <label class="form-check-label" for="paid-text">Paid</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="checkbox" class="form-check-input" id="reoccurring-text">
-                    <label class="form-check-label" for="reoccurring-text">Reoccurring</label>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" id="update-bill-button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-                    </div>
-                </div>
-
-            </form>
-<!--            <div class="modal-body d-flex">-->
-<!--                <P id = "name-text"></P>-->
-<!--                <P id = "billAmount-text"></P>-->
-<!--                <P id = "dueDate-text"></P>-->
-<!--                <P id = "paidDate-text"></P>-->
-<!--                <P id = "paid-text"></P>-->
-<!--                <P id = "reoccurring-text"></P>-->
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                <button type="button" id="update-bill-button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>-->
-<!--            </div>-->
-        </div>
-    </div>
-</div>
-
-
-<div id="bill-container" class="container-fluid"></div>
 
 <script src="./javascript/home.js" type="application/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

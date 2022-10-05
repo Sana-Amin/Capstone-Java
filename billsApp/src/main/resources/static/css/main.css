@@ -1,0 +1,24 @@
+#dollar-sign{
+    display:flex;
+}
+#center-dollar{
+    margin:auto;
+}
+#bill-table{
+    background-color: #B4BEC9;
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: #002333;
+    position: relative;
+    top: 50px;
+}
+.text-content{
+    text-align: center;
+}
+#padding{
+    padding: 10px 30px;
+}
+#bill-totalAmount{
+    margin: 10px;
+
+}
