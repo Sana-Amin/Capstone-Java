@@ -140,7 +140,7 @@ const populateModal = (obj) =>{
 
 const populateTotal = (obj) => {
     totalBill.innerText = ''
-    totalBill.innerText = `Your total bill is $${obj}`
+    totalBill.innerText = `Your total bill is $${obj.toFixed(2)}`
 }
 
 getBillTotal(userId);

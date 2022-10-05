@@ -33,20 +33,17 @@
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="bill-input">Bill Amount</label>
-                                    <div id = "dollar-sign">
-                                    <span id="center-dollar">$</span>
-                                    <input type="text" id="bill-input" class="form-control" placeholder = "20.00" required = "true"/>
-                                    </div>
+                                    <input type="double" id="bill-input" class="form-control" placeholder="$" required = "true" pattern="[0-9.]+" title="Must contain only digits"/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="due-date">Due Date</label>
-                                    <input type="text" id="due-date" class="form-control" placeholder="Due Date" required = "true" />
+                                    <input type="date" id="due-date" class="form-control"  required = "true" />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="paid-date">Paid Date</label>
-                                    <input type="text" id="paid-date" class="form-control" placeholder="Paid Date"/>
+                                    <input type="date" id="paid-date" class="form-control"/>
                                 </div>
 
                                 <div class="form-outline mb-4">

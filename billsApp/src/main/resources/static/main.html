@@ -26,25 +26,22 @@
                 <h4 class="modal-title text-center" id="bill-edit-modal-title">Edit Bill</h4>
                 <div class="form-outline mb-4">
                     <label class="form-label" for="name-text">Bill Name</label>
-                    <input type="text" id="name-text" class="form-control form-control-lg" />
+                    <input type="text" id="name-text" class="form-control form-control-lg"/>
                 </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="billAmount-text">Bill Amount</label>
-                    <div id = "dollar-sign">
-                        <span id="center-dollar">$</span>
-                    <input type="text" id="billAmount-text" class="form-control form-control-lg" />
-                    </div>
+                    <input type="double" id="billAmount-text" class="form-control form-control-lg" pattern="[0-9.]+" title="Must contain only digits"/>
                 </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="dueDate-text">Due Date</label>
-                    <input type="text" id="dueDate-text" class="form-control form-control-lg" />
+                    <input type="date" id="dueDate-text" class="form-control form-control-lg"/>
                 </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="paidDate-text">Paid Date</label>
-                    <input type="text" id="paidDate-text" class="form-control form-control-lg" />
+                    <input type="date" id="paidDate-text" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
